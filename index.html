@@ -51,8 +51,13 @@
     }
 
     @keyframes breathe {
-      0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
-      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+      0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.12); }
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -400px 0; }
+      100% { background-position: 400px 0; }
     }
 
     /* thin gold line top */
@@ -63,7 +68,7 @@
       width: 100%;
       height: 1px;
       background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold-light) 60%, transparent 100%);
-      opacity: 0.4;
+      opacity: 0.5;
     }
 
     .line-bottom {
@@ -73,8 +78,20 @@
       width: 100%;
       height: 1px;
       background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold-light) 60%, transparent 100%);
-      opacity: 0.4;
+      opacity: 0.5;
     }
+
+    /* corner accents */
+    .corner {
+      position: fixed;
+      width: 32px;
+      height: 32px;
+      opacity: 0.3;
+    }
+    .corner-tl { top: 18px; left: 18px; border-top: 1px solid var(--gold-light); border-left: 1px solid var(--gold-light); }
+    .corner-tr { top: 18px; right: 18px; border-top: 1px solid var(--gold-light); border-right: 1px solid var(--gold-light); }
+    .corner-bl { bottom: 18px; left: 18px; border-bottom: 1px solid var(--gold-light); border-left: 1px solid var(--gold-light); }
+    .corner-br { bottom: 18px; right: 18px; border-bottom: 1px solid var(--gold-light); border-right: 1px solid var(--gold-light); }
 
     .container {
       text-align: center;
@@ -99,9 +116,21 @@
       font-size: clamp(3rem, 8vw, 6rem);
       font-weight: 700;
       letter-spacing: 0.18em;
-      color: var(--white);
       line-height: 1;
       margin-bottom: 1.2rem;
+      background: linear-gradient(
+        105deg,
+        var(--white) 0%,
+        var(--white) 38%,
+        var(--gold-light) 48%,
+        var(--white) 58%,
+        var(--white) 100%
+      );
+      background-size: 400px 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 6s ease-in-out infinite;
     }
 
     .tagline {
@@ -109,16 +138,16 @@
       font-weight: 300;
       letter-spacing: 0.45em;
       text-transform: uppercase;
-      color: rgba(245, 245, 245, 0.45);
+      color: rgba(201, 168, 76, 0.4);
       margin-bottom: 4rem;
     }
 
     .divider {
-      width: 40px;
+      width: 60px;
       height: 1px;
-      background: var(--gold);
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
       margin: 0 auto 4rem;
-      opacity: 0.6;
+      opacity: 0.7;
     }
 
     .buttons {
@@ -136,23 +165,27 @@
       letter-spacing: 0.3em;
       text-transform: uppercase;
       text-decoration: none;
-      border: 1px solid rgba(201, 168, 76, 0.35);
-      color: rgba(245, 245, 245, 0.75);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      color: rgba(201, 168, 76, 0.6);
       background: transparent;
-      transition: border-color 0.3s, color 0.3s, background 0.3s;
+      transition: border-color 0.4s, color 0.4s, box-shadow 0.4s;
       cursor: pointer;
     }
 
     .btn:hover {
-      border-color: var(--gold);
-      color: var(--white);
-      background: rgba(201, 168, 76, 0.07);
+      border-color: var(--gold-light);
+      color: var(--gold-light);
+      box-shadow: 0 0 18px rgba(201, 168, 76, 0.12);
     }
   </style>
 </head>
 <body>
   <div class="line-top"></div>
   <div class="line-bottom"></div>
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
 
   <div class="container">
     <div class="logo">
