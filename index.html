@@ -4,8 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZENDEX</title>
-  <link rel="icon" type="image/jpeg" href="logo.jpg" />
-  <link rel="apple-touch-icon" href="logo.jpg" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <!-- Open Graph / Social Thumbnail -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.zendex.fi/" />
+  <meta property="og:title" content="ZENDEX" />
+  <meta property="og:description" content="Privacy. Security. ZEN." />
+  <meta property="og:image" content="https://www.zendex.fi/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ZENDEX" />
+  <meta name="twitter:description" content="Privacy. Security. ZEN." />
+  <meta name="twitter:image" content="https://www.zendex.fi/og.jpg" />
   <style>
     *, *::before, *::after {
       margin: 0;
@@ -100,7 +115,7 @@
     }
 
     .logo {
-      width: 200px;
+      width: 160px;
       margin: 0 auto 1.6rem;
     }
 
@@ -108,8 +123,6 @@
       width: 100%;
       height: auto;
       display: block;
-      mix-blend-mode: lighten;
-      filter: contrast(1.1);
     }
 
     .wordmark {
@@ -118,19 +131,7 @@
       letter-spacing: 0.18em;
       line-height: 1;
       margin-bottom: 1.2rem;
-      background: linear-gradient(
-        105deg,
-        var(--white) 0%,
-        var(--white) 38%,
-        var(--gold-light) 48%,
-        var(--white) 58%,
-        var(--white) 100%
-      );
-      background-size: 400px 100%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: shimmer 6s ease-in-out infinite;
+      color: var(--white);
     }
 
     .tagline {
@@ -138,7 +139,7 @@
       font-weight: 300;
       letter-spacing: 0.45em;
       text-transform: uppercase;
-      color: rgba(201, 168, 76, 0.4);
+      color: rgba(245, 245, 245, 0.6);
       margin-bottom: 4rem;
     }
 
@@ -189,7 +190,7 @@
 
   <div class="container">
     <div class="logo">
-      <img src="logo.jpg" alt="ZENDEX" />
+      <img src="logo.png" alt="ZENDEX" />
     </div>
     <div class="wordmark">ZENDEX</div>
     <div class="tagline">Privacy &nbsp;&middot;&nbsp; Security &nbsp;&middot;&nbsp; ZEN</div>
