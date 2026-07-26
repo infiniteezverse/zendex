@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZENDEX — Private DeFi Execution Layer</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.zendex.fi/full.html" />
+  <meta property="og:title" content="ZENDEX" />
+  <meta property="og:description" content="Privacy. Security. ZEN." />
+  <meta property="og:image" content="https://www.zendex.fi/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ZENDEX" />
+  <meta name="twitter:description" content="Privacy. Security. ZEN." />
+  <meta name="twitter:image" content="https://www.zendex.fi/og.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --white: #f5f5f5;
+      --black: #000000;
+    }
+
+    html, body { background: var(--black); color: var(--white); }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; }
+
+    a { color: inherit; }
+
+    .hero {
+      padding: 120px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.13);
+    }
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      margin-bottom: 24px;
+    }
+    .hero-brand img { width: 28px; height: 28px; }
+    .hero h1 { font-size: clamp(2.4rem, 5vw, 3.5rem); margin-bottom: 30px; color: #fff; }
+    .hero-desc { color: #c0c0c0; margin-bottom: 40px; max-width: 44ch; }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: #000;
+      padding: 14px 40px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      margin-bottom: 40px;
+    }
+    .hero-badges { display: flex; gap: 15px; flex-wrap: wrap; }
+    .hero-badges span {
+      padding: 8px 16px;
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: rgba(245, 245, 245, 0.7);
+    }
+    .hero-right { display: flex; align-items: center; }
+    .explainer {
+      background: rgba(201, 168, 76, 0.05);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      padding: 50px;
+      border-radius: 8px;
+      width: 100%;
+    }
+    .explainer h2 { font-size: 1.7rem; margin-bottom: 30px; }
+    .flow { display: flex; gap: 15px; align-items: center; margin-bottom: 30px; font-weight: 600; color: var(--gold-light); flex-wrap: wrap; }
+    .flow .arrow { color: #888; }
+    .explainer p { color: #a0a0a0; }
+
+    .value { padding: 100px 40px; text-align: center; border-bottom: 1px solid rgba(201, 168, 76, 0.13); }
+    .value h2 {
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      max-width: 800px;
+      margin: 0 auto;
+      padding-bottom: 30px;
+      position: relative;
+    }
+    .value h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 100px; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .features { background: #0a0a0a; padding: 100px 40px; border-bottom: 1px solid rgba(201, 168, 76, 0.13); }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto; }
+    .feature-col { border-left: 1px solid var(--gold); padding-left: 40px; }
+    .feature-col h3 { color: var(--gold-light); margin-bottom: 15px; }
+    .feature-col p { color: #888; font-size: 15px; }
+
+    .security { padding: 80px 40px; text-align: center; border-bottom: 1px solid rgba(201, 168, 76, 0.13); }
+    .security h2 { font-size: 1.5rem; margin-bottom: 30px; letter-spacing: 0.15em; }
+    .security-items { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-size: 14px; color: #ccc; }
+    .security-items .dot { color: var(--gold); }
+
+    .verify { background: #0a0a0a; padding: 100px 40px; border-bottom: 1px solid rgba(201, 168, 76, 0.13); }
+    .verify-content { max-width: 900px; margin: 0 auto; border-left: 2px solid var(--gold); padding-left: 40px; }
+    .verify-content h2 { font-size: 1.9rem; margin-bottom: 20px; }
+    .verify-content .sub { color: var(--gold-light); margin-bottom: 20px; font-weight: 500; }
+    .verify-content p { color: #a0a0a0; margin-bottom: 20px; font-size: 15px; }
+    .verify-content .hi { color: var(--gold-light); }
+
+    .compare { padding: 100px 40px; border-bottom: 1px solid rgba(201, 168, 76, 0.13); }
+    .compare-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; align-items: start; }
+    .compare-col h3 { font-size: 18px; margin-bottom: 30px; }
+    .addresses, .commits {
+      background: rgba(201, 168, 76, 0.05);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      padding: 30px;
+      border-radius: 8px;
+      font-family: monospace;
+      color: var(--gold-light);
+      line-height: 2;
+    }
+    .compare-div { width: 1px; background: linear-gradient(180deg, transparent, var(--gold), transparent); min-height: 200px; }
+    .note { margin-top: 15px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; color: #888; }
+
+    .roadmap { background: #0a0a0a; padding: 100px 40px; border-bottom: 1px solid rgba(201, 168, 76, 0.13); }
+    .roadmap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto; }
+    .road-col { border-right: 1px solid var(--gold); padding-right: 40px; }
+    .road-col:last-child { border-right: none; }
+    .road-col h3 { color: var(--gold-light); margin-bottom: 15px; font-size: 16px; }
+    .road-col p { color: #888; font-size: 14px; }
+
+    .footer { padding: 60px 40px; text-align: center; }
+    .copyright { color: var(--gold-light); margin-bottom: 30px; font-size: 14px; }
+    .links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 40px; }
+    .links a { color: var(--gold-light); font-size: 13px; font-weight: 600; text-decoration: none; }
+    .links a:hover { color: var(--gold); }
+    .disc { font-size: 12px; color: #666; max-width: 900px; margin: 0 auto; line-height: 1.8; }
+
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; gap: 60px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .compare-grid { grid-template-columns: 1fr; }
+      .compare-div { width: 100%; height: 1px; margin: 30px 0; }
+      .roadmap-grid { grid-template-columns: 1fr; }
+      .road-col { border-right: none; border-bottom: 1px solid var(--gold); padding-right: 0; padding-bottom: 40px; }
+      .road-col:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div>
+    <div class="hero-brand"><img src="logo.png" alt="" />ZENDEX</div>
+    <h1>For Sovereign DeFi.</h1>
+    <p class="hero-desc">AMM, Order Book, and Liquidity Provisioning unified under a single ZK execution layer that prevents front-running by design.</p>
+    <a class="btn" href="#" role="button">Connect Wallet</a>
+    <div class="hero-badges">
+      <span>HORIZEN NATIVE</span>
+      <span>NON-CUSTODIAL</span>
+      <span>FULLY AUDITED</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="explainer">
+      <h2>Your Private Execution Layer</h2>
+      <div class="flow">
+        <span>Deposit</span><span class="arrow">→</span>
+        <span>Commit</span><span class="arrow">→</span>
+        <span>Execute</span>
+      </div>
+      <p>A calm, private environment for trading, orders, and liquidity — without exposing intent or position.</p>
+    </div>
+  </div>
+</section>
+
+<section class="value">
+  <h2>ZENDEX enables the $ZEN flywheel and long-term asset value sink.</h2>
+</section>
+
+<section class="features">
+  <div class="features-grid">
+    <div class="feature-col">
+      <h3>ZK-AMM</h3>
+      <p>Automated market making with commitment-based pricing. Intent stays invisible.</p>
+    </div>
+    <div class="feature-col">
+      <h3>Hidden Order Book</h3>
+      <p>Orders and activity live behind ZK-proofs. Execution without exposure.</p>
+    </div>
+    <div class="feature-col">
+      <h3>Private Liquidity</h3>
+      <p>Provide liquidity across shielded pools. Earn yield without leaking positions.</p>
+    </div>
+  </div>
+</section>
+
+<section class="security">
+  <h2>SECURE BY DESIGN</h2>
+  <div class="security-items">
+    <span>Non-Custodial</span><span class="dot">◦</span>
+    <span>Fully Audited</span><span class="dot">◦</span>
+    <span>Verified On-Chain</span>
+  </div>
+</section>
+
+<section class="verify">
+  <div class="verify-content">
+    <h2>EVM Private Verification</h2>
+    <p class="sub">A private verification layer on Base.</p>
+    <p>Every action compiles into a zero-knowledge commitment, verified natively on-chain — throughput intact, intent invisible.</p>
+    <p class="hi">Horizen $ZEN infra meets Base efficiency. Deterministic execution. Private settlement.</p>
+  </div>
+</section>
+
+<section class="compare">
+  <div class="compare-grid">
+    <div class="compare-col">
+      <h3>Standard DEX (Public Visibility)</h3>
+      <div class="addresses">
+        <div>0x7a…f3 → SWAP 500 ZEN</div>
+        <div>0xa2…9c → SWAP 12 ETH</div>
+        <div>0x11…dd → LP Add 40k</div>
+      </div>
+    </div>
+    <div class="compare-div"></div>
+    <div class="compare-col">
+      <h3>ZENDEX (Commitment-Based)</h3>
+      <div class="commits">
+        <div>◈ 0x•••••••• ◈</div>
+        <div>◈ 0x•••••••• ◈</div>
+        <div>◈ 0x•••••••• ◈</div>
+        <p class="note">Every commitment is verifiable on-chain via ZK-proofs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="roadmap">
+  <div class="roadmap-grid">
+    <div class="road-col">
+      <h3>ZV1 — PRIVATE TRADING</h3>
+      <p>Shielded execution layer: private AMM curves and commitment-based order book.</p>
+    </div>
+    <div class="road-col">
+      <h3>ZV2 — ROUTER & AGGREGATION</h3>
+      <p>Aggregate shielded flow across protocols without revealing intent.</p>
+    </div>
+    <div class="road-col">
+      <h3>ZV3 — ENCLAVE</h3>
+      <p>TEE-verified execution and concentrated liquidity for institutional-grade privacy at scale.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p class="copyright">ZENDEX © 2026 — Private on-chain execution.</p>
+  <div class="links">
+    <a href="https://docs.google.com/forms/u/3/d/1H1DLGwBA0X6jx0joFpwirimnuJnQB3p31dKFTWQAixg" target="_blank" rel="noopener">Docs</a>
+    <a href="https://github.com/infiniteezverse/zendex" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://x.com/zendexfi" target="_blank" rel="noopener">X / Twitter</a>
+    <a href="https://discord.gg/FHZVdQVz2" target="_blank" rel="noopener">Discord</a>
+    <a href="https://t.me/zendexfi_official" target="_blank" rel="noopener">Telegram</a>
+  </div>
+  <p class="disc">ZENDEX is a decentralized, private, on-chain software ecosystem. By interacting with ZENDEX smart contracts, you assume full responsibility for your actions, regulatory compliance, and digital asset management. ZENDEX is engineered for privacy-preserving infrastructure; it does not constitute financial advice.</p>
+</footer>
+
+</body>
+</html>
